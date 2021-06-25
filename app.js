@@ -2,13 +2,14 @@
 
 const http = require('http')
 const hostname = 'localhost';
-const port = 3000;
+const port = 3333;
 
 const express = require('express');
 const app = express();
 
 const es6Renderer = require('express-es6-template-engine');
 
+app.use(express.static('public'));
 app.engine('html', es6Renderer);
 app.set('views', './views');
 app.set('view engine', 'html');

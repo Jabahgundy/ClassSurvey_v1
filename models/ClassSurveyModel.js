@@ -25,6 +25,20 @@ class ClassSurveyModel {
         }
 
     }
+
+    static async updateRanking(topic, topic_score) {
+        try {
+            const response = await db.result(
+                `UPDAT topics SET Topic_score`
+            );
+
+        } catch (error) {
+            console.error("ERROR: ", error);
+            return error;
+        }
+    }
+
+
 }
 
 module.exports = ClassSurveyModel;
